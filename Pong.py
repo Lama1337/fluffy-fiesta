@@ -5,26 +5,70 @@
 #upgrade pip = py -m pip install --upgrade pip
 #install pygame_module = py -m pip install -U pygame --user
 
-#Import av pygamemodul når jeg skjønner hvordan det gjøres....
+#Import av pygamemodul
 import pygame
 pygame.init()
 
-#Tegner spillbrett ,(Pygame bruker noe som heter surface du kan kun ha 1 av den)
-gameDisplay = pygame.display.set_mode((1024,768))
+#Spillvindustuff
+gameDisplay = pygame.display.set_mode((1024,768))   #Lager spillvindu = Surfacce, du kan kun ha 1 av denne typen)
+pygame.display.set_caption("Pong")
+## Få dette til å virke surface = pygame.image.load("Abomb.png").convert() 
+
+
+#Definering av klokke for og sette fps basically
+clock = pygame.time.Clock()
+
+#Dead or Alive
+dead = False
+
+
+while not dead:                                     #Logicloop1 fanger alle events med pygame event get. 
+    
+    for event in pygame.event.get():                # her sjhjer
+        if event.type == pygame.QUIT:               # aså skjer sånn
+            dead = True
+
+        gameDisplay.fill(surface)
+        
+
+        print(event)
+
+pygame.display.update()                         #Oppdatere vinduet med data
+clock.tick(60)                                  #FPS                    
+
+pygame.quit()                                   #Stopper Pygame
+quit()                                          #Python quit
+
+
 
 
 #Tegner spillere + ball (more surface code i assume)
 
 
 
-Playernames
-Player1 = input("Player1: ")
-Player2 = input("Player2: ")
+
+
+
+
+
+
+
+
+
+
+
+#      Til senere utvikling
+#-----------------------------------
+
+#Playernames
+#Player1 = input("Player1: ")
+#Player2 = input("Player2: ")
 
 #Definerer kontrollinput
 
-Player1.up = "arrow_up"
-Player1.down = #
+#Player1.up = "arrow_up"
+#Player1.down = #
 
-Player2.up = "w"
-Player2.down = "s"
+#Player2.up = "w"
+#Player2.down = "s"
+
